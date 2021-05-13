@@ -22,7 +22,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: nrj_development
+      POSTGRES_DB: railsgql_development
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
