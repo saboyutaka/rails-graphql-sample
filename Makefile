@@ -10,6 +10,9 @@ serve: up attach ## Run Serve
 up: ## Run web container
 	docker-compose up -d ruby
 
+workspace: ## Login to ruby dontainer
+	docker-compose exec ruby bash
+
 console: ## Run Rails Console
 	docker-compose run --rm ruby bundle exec rails c
 
@@ -20,7 +23,7 @@ migrate: ## Run rails db:migrate
 	docker-compose run --rm ruby bundle exec rails db:migrate
 
 attach: ## Attach running web container for binding.pry
-	docker attach `docker ps -f name=rails_ruby -f status=running --format "{{.ID}}"`
+	docker attach `docker ps -f name=rails-graphql_ruby -f status=running --format "{{.ID}}"`
 
 .PHONY: help
 help:
