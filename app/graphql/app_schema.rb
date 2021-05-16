@@ -5,6 +5,7 @@ class AppSchema < GraphQL::Schema
   instrument(:query, QueryTimerInstrumentation)
   mutation(Types::MutationType)
   query(Types::QueryType)
+  # object(Types::BookType)
 
   # Union and Interface Resolution
   def self.resolve_type(abstract_type, obj, ctx)
