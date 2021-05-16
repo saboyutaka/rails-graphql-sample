@@ -1,4 +1,8 @@
+
+require_relative 'instrumentation/query_timer'
+
 class AppSchema < GraphQL::Schema
+  instrument(:query, QueryTimerInstrumentation)
   mutation(Types::MutationType)
   query(Types::QueryType)
 
